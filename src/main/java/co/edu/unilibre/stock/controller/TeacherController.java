@@ -7,21 +7,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import co.edu.unilibre.stock.entity.Product;
-import co.edu.unilibre.stock.service.IProductService;
+import co.edu.unilibre.stock.entity.Teacher;
+import co.edu.unilibre.stock.service.ITeacherService;
 
 @RestController
-public class ProductController {
+public class TeacherController {
 	@Autowired
-	private IProductService productService;
+	private ITeacherService productService;
 	
 	@GetMapping("/list")
-	public List<Product> getList(){
+	public List<Teacher> getList(){
 		return productService.getAllList();
 	}
 	
 	@GetMapping("/{id}")
-	public Product getById(@PathVariable Long id) {
+	public Teacher getById(@PathVariable Long id) {
 		return productService.getById(id);
 	}
 }
